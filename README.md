@@ -1,7 +1,7 @@
-userR_2014
+useR_2014
 ==========
 
-Preparation for the R user conference 2014
+My abstract has been accepted as a poster for the R user conference 2014 (http://user2014.stat.ucla.edu/). This repo contains all the preparation materials. 
 
 ## Requirements for Posters
 
