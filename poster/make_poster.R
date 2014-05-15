@@ -24,12 +24,12 @@ library(extrafont) ## Note: Run font_import() if it has not been done yet
 
 colour_header <- "grey95"
 colour_text <- "grey95"
-colour_line <- "steelblue"
+colour_line <- "grey95"
 colour_link <- "grey95"
-colour_intro <- "chartreuse3"
-colour_data <- "yellow1"
-colour_crimemap <- "darkorange"
-colour_rcrimemap <- "dodgerblue"
+colour_intro <- "grey95"
+colour_data <- "grey95"
+colour_crimemap <- "grey95"
+colour_rcrimemap <- "grey95"
 
 
 ## =============================================================================
@@ -252,17 +252,42 @@ text_test <- qplot(1:9, 1:9, geom = "blank") +
   annotate("text", x = 5, y = 2, label = "Blah blah blah blah", size = 18, colour = "grey95") + 
   theme_blank
 
-print(bdr_grey, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_top):set_pixel["row1",3], 51:560))
+#print(bdr_grey, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_top):set_pixel["row1",3], 51:560))
 print(text_test, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_top):set_pixel["row1",3], 51:560))
 
-print(bdr_grey, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_top):set_pixel["row2",3], 51:560))
+#print(bdr_grey, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_top):set_pixel["row2",3], 51:560))
 print(text_test, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_top):set_pixel["row2",3], 51:560))
 
-print(bdr_grey, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_top):set_pixel["row1",3], 611:1146))
+#print(bdr_grey, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_top):set_pixel["row1",3], 611:1146))
 print(text_test, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_top):set_pixel["row1",3], 611:1146))
 
-print(bdr_grey, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_top):set_pixel["row2",3], 611:1146))
+#print(bdr_grey, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_top):set_pixel["row2",3], 611:1146))
 print(text_test, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_top):set_pixel["row2",3], 611:1146))
+
+
+## =============================================================================
+## Print to PDF - Testing - Pictures with Transparent Background
+## =============================================================================
+
+pixel_offset <- 10
+
+bg_logo <- qplot(1:1, 1:1, geom = "blank") +
+  annotation_custom(img2grob("img_logo.png"), 
+                    xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf) +
+  theme_blank
+
+print(bg_logo, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_offset):(set_pixel["row1",2] + pixel_title + pixel_top + pixel_offset), 51:560))
+print(bg_logo, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_offset):(set_pixel["row1",2] + pixel_title + pixel_top + pixel_offset), 611:1146))
+print(bg_logo, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_offset):(set_pixel["row1",2] + pixel_title + pixel_top + pixel_offset), 1147:1682))
+print(bg_logo, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_offset):(set_pixel["row1",2] + pixel_title + pixel_top + pixel_offset), 1683:2218))
+print(bg_logo, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_offset):(set_pixel["row1",2] + pixel_title + pixel_top + pixel_offset), 2269:2778))
+
+print(bg_logo, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_offset):(set_pixel["row2",2] + pixel_title + pixel_top + pixel_offset), 51:560))
+print(bg_logo, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_offset):(set_pixel["row2",2] + pixel_title + pixel_top + pixel_offset), 611:1146))
+print(bg_logo, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_offset):(set_pixel["row2",2] + pixel_title + pixel_top + pixel_offset), 1147:1682))
+print(bg_logo, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_offset):(set_pixel["row2",2] + pixel_title + pixel_top + pixel_offset), 1683:2218))
+print(bg_logo, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_offset):(set_pixel["row2",2] + pixel_title + pixel_top + pixel_offset), 2268:2778))
+
 
 
 ## =============================================================================
