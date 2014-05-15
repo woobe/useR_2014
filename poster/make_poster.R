@@ -37,14 +37,9 @@ colour_rcrimemap <- "dodgerblue"
 ## =============================================================================
 
 row_pixel <- c("sep0", "header",
-               "sep1", "intro",
-               "sep2", "main_title",
-               "sep3", "main_logo",
-               "sep4", "url",
-               "sep5", "sub_logo",
-               "sep6", "sub_text",
-               "sep7", "footer",
-               "sep8")
+               "sep1", "row1",
+               "sep2", "row2",
+               "sep3")
 
 set_pixel <- data.frame(define = matrix(NA, nrow = length(row_pixel), ncol = 1),
                         start = matrix(NA, nrow = length(row_pixel), ncol = 1),
@@ -52,24 +47,14 @@ set_pixel <- data.frame(define = matrix(NA, nrow = length(row_pixel), ncol = 1),
 rownames(set_pixel) <- row_pixel
 
 ## Change these
-set_pixel["sep0", 1] <- 20
-set_pixel["sep1", 1] <- 20
-set_pixel["sep2", 1] <- 20
-set_pixel["sep3", 1] <- 0 
-set_pixel["sep4", 1] <- 0 
-set_pixel["sep5", 1] <- 0 
-set_pixel["sep6", 1] <- 0 
-set_pixel["sep7", 1] <- 20
-set_pixel["sep8", 1] <- 20
+set_pixel["sep0", 1] <- 0
+set_pixel["sep1", 1] <- 50
+set_pixel["sep2", 1] <- 50
+set_pixel["sep3", 1] <- 50
 
-set_pixel["header", 1] <- 280
-set_pixel["intro", 1] <- 320 
-set_pixel["main_title", 1] <- 120
-set_pixel["main_logo", 1] <- 320 
-set_pixel["url", 1] <- 70 
-set_pixel["sub_logo", 1] <- 320
-set_pixel["sub_text", 1] <- 320
-set_pixel["footer", 1] <- 150
+set_pixel["header", 1] <- 330
+set_pixel["row1", 1] <- 760
+set_pixel["row2", 1] <- 760
 
 
 ## Update set_pixel
@@ -82,7 +67,6 @@ for (n_row in 2:nrow(set_pixel)) {
 
 ## Print it out (too see if it matches 2000 pixel)
 print(set_pixel)
-
 
 
 ## =============================================================================
@@ -138,17 +122,147 @@ print(bg_img, vp = vplayout(1:2000, 1:2828))
 
 
 ## =============================================================================
-## Print to PDF - Header
+## Print to PDF - Shades
 ## =============================================================================
 
 bg_shade <- qplot(1:1, 1:1, geom = "blank") +
   annotate("rect", xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf, 
-           colour = "steelblue", fill = "black", alpha = 0.5, size = 5) +
+           colour = "transparent", fill = "black", alpha = 0.5, size = 0) +
   theme_blank
 
 ## Header
-print(bg_shade, vp = vplayout(set_pixel["header",2:3], 21:2808))  ## i.e. 20 off the edges
+print(bg_shade, vp = vplayout(set_pixel["header",2:3], 1:2828))  ## i.e. 20 off the edges
 
+## Row 1
+print(bg_shade, vp = vplayout(set_pixel["row1",2:3], 51:560))
+print(bg_shade, vp = vplayout(set_pixel["row1",2:3], 611:2218))
+print(bg_shade, vp = vplayout(set_pixel["row1",2:3], 2269:2778))
+
+## Row 2
+print(bg_shade, vp = vplayout(set_pixel["row2",2:3], 51:560))
+print(bg_shade, vp = vplayout(set_pixel["row2",2:3], 611:2218))
+print(bg_shade, vp = vplayout(set_pixel["row2",2:3], 2269:2778))
+
+## Row 1 Title Shade
+pixel_title <- 100
+print(bg_shade, vp = vplayout(set_pixel["row1",2]:(set_pixel["row1",2] + pixel_title), 51:560))
+print(bg_shade, vp = vplayout(set_pixel["row1",2]:(set_pixel["row1",2] + pixel_title), 611:2218))
+print(bg_shade, vp = vplayout(set_pixel["row1",2]:(set_pixel["row1",2] + pixel_title), 2269:2778))
+
+## Row 2 Title Shade
+pixel_title <- 100
+print(bg_shade, vp = vplayout(set_pixel["row2",2]:(set_pixel["row2",2] + pixel_title), 51:560))
+print(bg_shade, vp = vplayout(set_pixel["row2",2]:(set_pixel["row2",2] + pixel_title), 611:2218))
+print(bg_shade, vp = vplayout(set_pixel["row2",2]:(set_pixel["row2",2] + pixel_title), 2269:2778))
+
+## =============================================================================
+## Print to PDF - Text
+## =============================================================================
+
+title_header <- qplot(1:9, 1:9, geom = "blank") +
+  annotate("text", x = 5, y = 7.25, label = "Interactive Spatial Data Visualization", size = 50, colour = colour_header) +
+  annotate("text", x = 5, y = 4.75, label = "Exploring Different Options with Case Studies based on UK Crime Data", size = 25, colour = colour_text) +
+  annotate("segment", x = 1, xend = 9, y = 3.25, yend = 3.25, size = 2, colour = colour_line) +
+  annotate("text", x = 5, y = 2, label = "Jo-fai Chow", size = 25, colour = colour_text) +
+  theme_blank
+
+title_intro <- qplot(1:9, 1:9, geom = "blank") +
+  annotate("text", x = 5, y = 5, label = "Introduction", size = 28, colour = "grey95") + theme_blank
+
+title_data <- qplot(1:9, 1:9, geom = "blank") +
+  annotate("text", x = 5, y = 5, label = "Crime Data", size = 28, colour = "grey95") + theme_blank
+
+title_crimemap <- qplot(1:9, 1:9, geom = "blank") +
+  annotate("text", x = 5, y = 5, label = "CrimeMap: Shiny Web App", size = 28, colour = "grey95") + theme_blank
+
+title_rcrimemap <- qplot(1:9, 1:9, geom = "blank") +
+  annotate("text", x = 5, y = 5, label = "rCrimemap: R Package", size = 28, colour = "grey95") + theme_blank
+
+title_aboutme <- qplot(1:9, 1:9, geom = "blank") +
+  annotate("text", x = 5, y = 5, label = "About Me", size = 28, colour = "grey95") + theme_blank
+
+title_credits <- qplot(1:9, 1:9, geom = "blank") +
+  annotate("text", x = 5, y = 5, label = "Credits", size = 28, colour = "grey95") + theme_blank
+
+
+## Header
+print(title_header, vp = vplayout(set_pixel["header",2:3], 1:2828))  ## i.e. 20 off the edges
+
+## Row 1
+print(title_intro, vp = vplayout(set_pixel["row1",2]:(set_pixel["row1",2] + pixel_title), 51:560))
+print(title_crimemap, vp = vplayout(set_pixel["row1",2]:(set_pixel["row1",2] + pixel_title), 611:2218))
+print(title_aboutme, vp = vplayout(set_pixel["row1",2]:(set_pixel["row1",2] + pixel_title), 2269:2778))
+
+## Row 2
+print(title_data, vp = vplayout(set_pixel["row2",2]:(set_pixel["row2",2] + pixel_title), 51:560))
+print(title_rcrimemap, vp = vplayout(set_pixel["row2",2]:(set_pixel["row2",2] + pixel_title), 611:2218))
+print(title_credits, vp = vplayout(set_pixel["row2",2]:(set_pixel["row2",2] + pixel_title), 2269:2778))
+
+
+## =============================================================================
+## Print to PDF - Borders
+## =============================================================================
+
+bdr_grey <- qplot(1:1, 1:1, geom = "blank") +
+  annotate("rect", xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf, 
+           colour = "grey95", fill = "transparent", alpha = 0, size = 2) +
+  theme_blank
+
+## Row 1
+print(bdr_grey, vp = vplayout(set_pixel["row1",2:3], 51:560))
+print(bdr_grey, vp = vplayout(set_pixel["row1",2:3], 611:2218))
+print(bdr_grey, vp = vplayout(set_pixel["row1",2:3], 2269:2778))
+
+## Row 2
+print(bdr_grey, vp = vplayout(set_pixel["row2",2:3], 51:560))
+print(bdr_grey, vp = vplayout(set_pixel["row2",2:3], 611:2218))
+print(bdr_grey, vp = vplayout(set_pixel["row2",2:3], 2269:2778))
+
+
+## =============================================================================
+## Print to PDF - Testing - Middle Column x 3
+## =============================================================================
+
+print(bdr_grey, vp = vplayout((set_pixel["row1",2]+ pixel_title):set_pixel["row1",3], 611:1146))
+print(bdr_grey, vp = vplayout((set_pixel["row1",2]+ pixel_title):set_pixel["row1",3], 1147:1682))
+print(bdr_grey, vp = vplayout((set_pixel["row1",2]+ pixel_title):set_pixel["row1",3], 1683:2218))
+
+print(bdr_grey, vp = vplayout((set_pixel["row2",2]+ pixel_title):set_pixel["row2",3], 611:1146))
+print(bdr_grey, vp = vplayout((set_pixel["row2",2]+ pixel_title):set_pixel["row2",3], 1147:1682))
+print(bdr_grey, vp = vplayout((set_pixel["row2",2]+ pixel_title):set_pixel["row2",3], 1683:2218))
+
+
+## =============================================================================
+## Print to PDF - Testing - Golden Ratio
+## =============================================================================
+
+## row = 760 pixel
+## title = 100 pixel, remain = 660
+## top = 252, bottom = 408, ratio = 1.619
+
+pixel_top <- 252
+
+text_test <- qplot(1:9, 1:9, geom = "blank") +
+  annotate("text", x = 5, y = 8, label = "Blah blah blah blah", size = 18, colour = "grey95") + 
+  annotate("text", x = 5, y = 7, label = "Blah blah blah blah", size = 18, colour = "grey95") + 
+  annotate("text", x = 5, y = 6, label = "Blah blah blah blah", size = 18, colour = "grey95") + 
+  annotate("text", x = 5, y = 5, label = "Blah blah blah blah", size = 18, colour = "grey95") + 
+  annotate("text", x = 5, y = 4, label = "Blah blah blah blah", size = 18, colour = "grey95") + 
+  annotate("text", x = 5, y = 3, label = "Blah blah blah blah", size = 18, colour = "grey95") + 
+  annotate("text", x = 5, y = 2, label = "Blah blah blah blah", size = 18, colour = "grey95") + 
+  theme_blank
+
+print(bdr_grey, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_top):set_pixel["row1",3], 51:560))
+print(text_test, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_top):set_pixel["row1",3], 51:560))
+
+print(bdr_grey, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_top):set_pixel["row2",3], 51:560))
+print(text_test, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_top):set_pixel["row2",3], 51:560))
+
+print(bdr_grey, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_top):set_pixel["row1",3], 611:1146))
+print(text_test, vp = vplayout((set_pixel["row1",2] + pixel_title + pixel_top):set_pixel["row1",3], 611:1146))
+
+print(bdr_grey, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_top):set_pixel["row2",3], 611:1146))
+print(text_test, vp = vplayout((set_pixel["row2",2] + pixel_title + pixel_top):set_pixel["row2",3], 611:1146))
 
 
 ## =============================================================================
