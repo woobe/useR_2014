@@ -21,8 +21,8 @@ The maturality and extensive graphical abilities of R and its packages make R an
 Previous work has shown that it is possible to combine the functionality in packages **ggmap**, **ggplot2**, **shiny** and **shinyapps** for crime data visualization in the form of a web application named *'CrimeMap'* (Chow, 2013). The web application is user-friendly and highly customizable. It allows users to create and customize spatial visualization in a few clicks without prior knowledge in R (figure 1). Moreover, **shiny** automatcially adjusts the best application layout for desktop computers, tablets and smartphones.
 
 <center>
-<img src="http://i.imgur.com/SJ1aa7w.jpg" alt="CrimeMap" width="350">
 <img src="http://i.imgur.com/CGX6hqx.jpg" alt="CrimeMap" width="350">
+<img src="http://i.imgur.com/SJ1aa7w.jpg" alt="CrimeMap" width="350">
 </center>
 
 <center>**Figure 1 (Left)**: *'CrimeMap'* example. **Figure 2 (Right)**: **rCrimemap** example.</center>
