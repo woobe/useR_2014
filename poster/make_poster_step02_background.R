@@ -7,4 +7,4 @@ bg_img <- qplot(1:1, 1:1, geom = "blank") +
                     xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf) +
   theme_blank
 
-print(bg_img, vp = vplayout(1:2000, 1:2828))  ## enable it for final print #######################
+print(bg_img, vp = vplayout(1:2000, 1:2828))

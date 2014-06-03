@@ -4,9 +4,9 @@
 
 rm(list=ls())
 if (Sys.info()[1] == "Linux") {
-  setwd("/media/SUPPORT/Cloud/Copy/Repo/useR_2014/poster")
+  setwd("/media/SUPPORT/Repo/useR_2014/poster")
 } else {
-  setwd("D:/Cloud/Copy/Repo/useR_2014/poster")
+  setwd("D:/Repo/useR_2014/poster")
 }
 
 
@@ -20,27 +20,38 @@ library(EBImage)
 library(ggplot2)
 library(rPlotter)
 library(extrafont) ## Note: Run font_import() if it has not been done yet
-library(wesanderson)
 
 
 ## =============================================================================
 ## Global Settings
 ## =============================================================================
 
-## wesanderson colours
-wes_colour <- wes.palette(5, "Darjeeling")
+set.seed(1234)
+new_colours <- extract_colours("http://filmhash.files.wordpress.com/2011/06/reservoir-dogs-051.jpg", 9)
+new_colours2 <- extract_colours("http://www.moviegoods.com/Assets/product_images/1010/477803.1010.A.jpg", 9)
+
+if (FALSE) {
+  simulate_colours(new_colours)
+  simulate_colours(new_colours2)
+}
 
 ## Set Colours
-col_header <- "black"
-col_header_line <- "grey85"
+col_header <- new_colours[1]
+col_header_line <- new_colours[2]
 
-col_text <- "black"
+col_text <- new_colours[1]
+col_text2 <- new_colours[2]
+col_text3 <- new_colours2[4] #new_colours[9]
 
-col_shade_cm <- wes_colour[5]
-col_shade_rcm <- wes_colour[4]
+col_shade <- new_colours[4]   # wes_colour[5]
+col_shade_cm <- new_colours[3]   # wes_colour[5]
+col_shade_rcm <- new_colours[7]  # wes_colour[4]
 
-col_link_cm <- "black"
-col_link_rcm <- "black"
+col_link_cm <- new_colours[2]
+col_link_rcm <- new_colours[2]
+
+col_file <- new_colours[5]
+col_line1 <- new_colours[9]
 
 
 ## =============================================================================
@@ -66,7 +77,8 @@ suppressMessages(loadfonts())
 
 ## Create blank pdf
 if (Sys.info()[1] == "Linux") {
-  pdf(file = "output.pdf", height = 33.0709, width = 46.77165, family = "Ubuntu", title = "Jo-fai Chow useR! 2014 Poster. Find out more: jofaichow.co.uk") 
+  pdf(file = "output.pdf", height = 33.0709, width = 46.77165, compress = TRUE,
+      family = "Ubuntu", title = "jofaichow.co.uk") 
 } else {
   pdf(file = "output.pdf", height = 33.0709, width = 46.77165) ## use Window's default
 }
@@ -87,20 +99,20 @@ vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
 ## =============================================================================
 
 source('make_poster_step01_grid.R')
-#source('make_poster_step02_background.R')    # Image - slow
+#source('make_poster_step02_background.R')         # Image - slow
 source('make_poster_step03_shade.R')
-source('make_poster_step04_header.R')
-source('make_poster_step05_sub_header.R')
-source('make_poster_step06_t_main.R')
-# source('make_poster_step07_c_main.R')       # Image - slow
-source('make_poster_step08_t_sub1.R')
-#source('make_poster_step09_p_sub1.R')        # Image - slow
-source('make_poster_step10_c_sub1.R')
-source('make_poster_step11_t_sub2.R')
-#source('make_poster_step12_p_sub2.R')        # Image - slow
-source('make_poster_step13_c_sub2.R')
-source('make_poster_step14_footer.R')
-
+#source('make_poster_step04_header.R')
+#source('make_poster_step05_sub_header.R')
+#source('make_poster_step06_t_main.R')
+#source('make_poster_step07_c_main.R')             # Image - slow
+source('make_poster_step07b_c_main_annotation.R') # Image - slow
+#source('make_poster_step08_t_sub1.R')
+#source('make_poster_step09_p_sub1.R')             # Image - slow
+#source('make_poster_step10_c_sub1.R')
+#source('make_poster_step11_t_sub2.R')
+#source('make_poster_step12_p_sub2.R')             # Image - slow
+#source('make_poster_step13_c_sub2.R')
+#source('make_poster_step14_footer.R')
 
 ## =============================================================================
 ## Print to PDF - Save
@@ -108,7 +120,6 @@ source('make_poster_step14_footer.R')
 
 ## Save
 dev.off()
-
 
 ## =============================================================================
 ## Embed Font

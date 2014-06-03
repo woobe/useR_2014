@@ -10,3 +10,24 @@ title_header <- qplot(1:9, 1:9, geom = "blank") +
   theme_blank
 
 print(title_header, vp = vplayout(set_pixel["header",2:3], 21:2808))
+
+# n_off <- 20
+# 
+# ## useR! Logo (Left)
+# img_useR <- qplot(1:1, 1:1, geom = "blank") +
+#   annotation_custom(img2grob("./image/img_useR.png"), 
+#                     xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf) +
+#   theme_blank
+# 
+# #print(shade, vp = vplayout((set_pixel["header",2]+n_off):(set_pixel["header",3]-n_off), 21:380))
+# print(img_useR, vp = vplayout((set_pixel["header",2]+n_off):(set_pixel["header",3]-n_off), 21:380))
+# 
+# 
+# ## UCLA logo
+# print(shade, vp = vplayout((set_pixel["header",2]+n_off):(set_pixel["header",3]-n_off), 2449:2808))
+# print(img_useR, vp = vplayout((set_pixel["header",2]+n_off):(set_pixel["header",3]-n_off), 2449:2808))
+
+
+
+
+
