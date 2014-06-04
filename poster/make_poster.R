@@ -41,9 +41,9 @@ col_header_line <- new_colours[2]
 
 col_text <- new_colours[1]
 col_text2 <- new_colours[2]
-col_text3 <- new_colours2[4] #new_colours[9]
+col_text3 <- new_colours[9]
 
-col_shade <- new_colours[4]   # wes_colour[5]
+col_shade <- new_colours[1]   # wes_colour[5]
 col_shade_cm <- new_colours[3]   # wes_colour[5]
 col_shade_rcm <- new_colours[7]  # wes_colour[4]
 
@@ -99,32 +99,39 @@ vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
 ## =============================================================================
 
 source('make_poster_step01_grid.R')
-#source('make_poster_step02_background.R')         # Image - slow
+source('make_poster_step02_background.R')
 source('make_poster_step03_shade.R')
-#source('make_poster_step04_header.R')
-#source('make_poster_step05_sub_header.R')
-#source('make_poster_step06_t_main.R')
-#source('make_poster_step07_c_main.R')             # Image - slow
-source('make_poster_step07b_c_main_annotation.R') # Image - slow
-#source('make_poster_step08_t_sub1.R')
-#source('make_poster_step09_p_sub1.R')             # Image - slow
-#source('make_poster_step10_c_sub1.R')
-#source('make_poster_step11_t_sub2.R')
-#source('make_poster_step12_p_sub2.R')             # Image - slow
-#source('make_poster_step13_c_sub2.R')
-#source('make_poster_step14_footer.R')
+
+source('make_poster_step04_header.R')
+source('make_poster_step05_sub_header.R')
+
+source('make_poster_step06_t_main.R')
+source('make_poster_step07_c_main.R')             
+source('make_poster_step07b_c_main_annotation.R') 
+
+source('make_poster_step08_t_sub1.R')
+source('make_poster_step09_p_sub1.R')
+source('make_poster_step10_c_sub1.R')
+ 
+source('make_poster_step11_t_sub2.R')
+source('make_poster_step12_p_sub2.R')       
+source('make_poster_step13_c_sub2.R')
+ 
+source('make_poster_step14_footer.R')
+
 
 ## =============================================================================
-## Print to PDF - Save
+## Print to PDF - Save and Close Device
 ## =============================================================================
 
 ## Save
 dev.off()
 
+
 ## =============================================================================
 ## Embed Font
 ## =============================================================================
 
-## Embed fonts to make sure it gets printed correctly
-#if (Sys.info()[1] == "Linux") embed_fonts("output.pdf", outfile = "output_embedded.pdf") 
+## Embed fonts (very important!)
 if (Sys.info()[1] == "Linux") embed_fonts("output.pdf")
+

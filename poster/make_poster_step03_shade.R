@@ -5,17 +5,17 @@
 ## Create shade gg objects
 shade <- qplot(1:1, 1:1, geom = "blank") + 
   annotate("rect", xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf, 
-           colour = "transparent", fill = col_shade, alpha = 0.5, size = 1) +
+           colour = "transparent", fill = col_shade, alpha = 0.35, size = 1) +
   theme_blank
 
 shade_cm <- qplot(1:1, 1:1, geom = "blank") + 
   annotate("rect", xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf, 
-           colour = "transparent", fill = col_shade_cm, alpha = 0.5, size = 1) +
+           colour = "transparent", fill = col_shade_cm, alpha = 0.35, size = 1) +
   theme_blank
 
 shade_rcm <- qplot(1:1, 1:1, geom = "blank") +
   annotate("rect", xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf, 
-           colour = "transparent", fill = col_shade_rcm, alpha = 0.5, size = 1) +
+           colour = "transparent", fill = col_shade_rcm, alpha = 0.35, size = 1) +
   theme_blank
 
 
@@ -109,8 +109,4 @@ print(shade_rcm, vp = vplayout(set_pixel["p_sub2",2:3], 2361:2808))
 print(shade_rcm, vp = vplayout(set_pixel["c_sub2",2:3], 1425:1872))
 print(shade_rcm, vp = vplayout(set_pixel["c_sub2",2:3], 1893:2340))
 print(shade_rcm, vp = vplayout(set_pixel["c_sub2",2:3], 2361:2808))
-
-
-
-
 

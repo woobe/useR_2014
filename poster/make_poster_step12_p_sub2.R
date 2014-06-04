@@ -43,17 +43,13 @@ img_cmap1 <- qplot(1:1, 1:1, geom = "blank") +
   annotation_custom(img2grob("./image/img_cmap1.png"), 
                     xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf) + theme_blank
 
-img_cmap2 <- qplot(1:1, 1:1, geom = "blank") +
-  annotation_custom(img2grob("./image/img_cmap2.png"), 
+img_cmap_x9 <- qplot(1:1, 1:1, geom = "blank") +
+  annotation_custom(img2grob("./image/img_cmap_x9.png"), 
                     xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf) + theme_blank
-
-# img_cmap3 <- qplot(1:1, 1:1, geom = "blank") +
-#   annotation_custom(img2grob("./image/img_cmap3.png"), 
-#                     xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf) + theme_blank
 
 print(img_cm_adv, vp = vplayout(set_pixel['p_sub2', 2:3], 509:630.67))
 print(img_cmap1, vp = vplayout(set_pixel['p_sub2', 2:3], 651.67:773.33))
-print(img_cmap2, vp = vplayout(set_pixel['p_sub2', 2:3], 794.33:916))
+print(img_cmap_x9, vp = vplayout(set_pixel['p_sub2', 2:3], 794.33:916))
 
 
 ## =============================================================================
@@ -72,7 +68,6 @@ img_nexus7b <- qplot(1:1, 1:1, geom = "blank") +
 img_nexus7c <- qplot(1:1, 1:1, geom = "blank") +
   annotation_custom(img2grob("./image/img_nexus7c.png"), 
                     xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf) + theme_blank
-
 
 print(img_nexus7a, vp = vplayout(set_pixel['p_sub2', 2:3], 977:1098.67))
 print(img_nexus7b, vp = vplayout(set_pixel['p_sub2', 2:3], 1119.67:1241.33))
