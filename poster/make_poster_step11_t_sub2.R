@@ -30,7 +30,7 @@ title_rea <- qplot(1:9, 1:9, geom = "blank") +
   theme_blank
 
 title_sel <- qplot(1:9, 1:9, geom = "blank") +
-  annotate("text", x = 5, y = 5, label = "Self-Contained", size = 15, colour = col_text) +
+  annotate("text", x = 5, y = 5, label = "Web-Ready", size = 15, colour = col_text) +
   theme_blank
 
 print(title_int, vp = vplayout(set_pixel["t_sub2", 2:3], 1425:1872))

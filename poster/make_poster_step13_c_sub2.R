@@ -29,7 +29,7 @@ sub1_c <- qplot(1:9, 1:9, geom = "blank") +
 ## D
 sub1_d <- qplot(1:9, 1:9, geom = "blank") +
   annotate("text", x = 5, y = 7.50, label = 'Navigate and zoom in/out', size = 12, colour = col_text) +
-  annotate("text", x = 5, y = 5.75, label = 'like using any digital map.', size = 12, colour = col_text) +
+  annotate("text", x = 5, y = 5.75, label = 'like using any digital map', size = 12, colour = col_text) +
   annotate("text", x = 5, y = 4.00, label = 'with mouse or touchscreen.', size = 12, colour = col_text) +
   annotate("text", x = 5, y = 2.25, label = 'Explore large areas with ease!', size = 10, colour = col_text2) +
   theme_blank
@@ -45,9 +45,9 @@ sub1_e <- qplot(1:9, 1:9, geom = "blank") +
 ## F
 sub1_f <- qplot(1:9, 1:9, geom = "blank") +
   annotate("text", x = 5, y = 7.50, label = 'Heatmaps can be saved and', size = 12, colour = col_text) +
-  annotate("text", x = 5, y = 5.75, label = 'viewed as a stand-alone', size = 12, colour = col_text) +
-  annotate("text", x = 5, y = 4.00, label = 'and embeddable webpage.', size = 12, colour = col_text) +
-  annotate("text", x = 5, y = 2.25, label = 'Easy to create and share with others!', size = 10, colour = col_text2) +
+  annotate("text", x = 5, y = 5.75, label = 'viewed as HTML files. Easy', size = 12, colour = col_text) +
+  annotate("text", x = 5, y = 4.00, label = 'to create, publish and share.', size = 12, colour = col_text) +
+  annotate("text", x = 5, y = 2.25, label = 'Awesome rCharts workflow!', size = 10, colour = col_text2) +
   theme_blank
 
 print(sub1_a, vp = vplayout(set_pixel["c_sub2", 2:3], 21:468))

@@ -10,7 +10,7 @@ txt_t_main_cm1 <- qplot(1:9, 1:9, geom = "blank") +
   theme_blank
 
 txt_t_main_cm2 <- qplot(1:9, 1:9, geom = "blank") +
-  annotate("text", x = 5, y = 6, label = "Exploring Different Crimes Categories", size = 15, colour = col_text) +
+  annotate("text", x = 5, y = 6, label = "Exploring Different Crime Categories", size = 15, colour = col_text) +
   annotate("text", x = 5, y = 2, label = "Faceting with ggplot2", size = 12, colour = col_text2) +
   theme_blank
 

@@ -5,7 +5,7 @@
 ## Create shade gg objects
 shade <- qplot(1:1, 1:1, geom = "blank") + 
   annotate("rect", xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf, 
-           colour = "transparent", fill = col_shade, alpha = 0.35, size = 1) +
+           colour = "transparent", fill = col_shade, alpha = 0.75, size = 1) +
   theme_blank
 
 shade_cm <- qplot(1:1, 1:1, geom = "blank") + 

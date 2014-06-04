@@ -60,6 +60,8 @@ print(shade, vp = vplayout(975:1025, 265:465))
 
 print(shade, vp = vplayout(975:1025, 480:645))
 
+print(shade, vp = vplayout(995:1045, 1493:2038))
+
 
 ## =============================================================================
 ## Text
@@ -85,10 +87,16 @@ txt_waterloo <- qplot(1:100, 1:100, geom = "blank") +
   annotate("text", x = 83, y = 7, label = "Central Railway Terminus", size = 5, colour = col_text3) +
   theme_blank
 
+txt_cmd <- qplot(1:9, 1:9, geom = "blank") +
+  annotate("text", x = 5, y = 1.375, label = "> rCrimemap :: rcmap_quick( period = '2014-01' )", size = 10, colour = col_text3) +
+  theme_blank
+
+
 print(txt_soho, vp = vplayout(set_pixel["t_main", 2]:set_pixel["c_main", 3], 21:702))
 print(txt_police, vp = vplayout(set_pixel["t_main", 2]:set_pixel["c_main", 3], 21:702))
 print(txt_bigben, vp = vplayout(set_pixel["t_main", 2]:set_pixel["c_main", 3], 21:702))
 print(txt_waterloo, vp = vplayout(set_pixel["t_main", 2]:set_pixel["c_main", 3], 21:702))
+print(txt_cmd, vp = vplayout(set_pixel["t_main", 2]:set_pixel["c_main", 3], 1425:2106))
 
 
 
