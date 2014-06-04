@@ -75,10 +75,10 @@ theme_blank <- create_ggtheme("blank")  ## use rPlotter package
 ## Load Extra Fonts
 suppressMessages(loadfonts())
 
-## Create blank pdf
+## Create blank pdf (Linux recommended)
 if (Sys.info()[1] == "Linux") {
   pdf(file = "output.pdf", height = 33.0709, width = 46.77165, compress = TRUE,
-      family = "Ubuntu", title = "jofaichow.co.uk") 
+      family = "Ubuntu", title = "useR! 2014 Poster by Jo-fai Chow") 
 } else {
   pdf(file = "output.pdf", height = 33.0709, width = 46.77165) ## use Window's default
 }
@@ -92,7 +92,6 @@ if (Sys.info()[1] == "Linux") {
 grid.newpage()
 pushViewport(viewport(layout = grid.layout(2000, 2828)))
 vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
-
 
 
 ## =============================================================================

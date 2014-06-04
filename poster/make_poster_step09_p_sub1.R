@@ -62,7 +62,7 @@ img_icon_blue <- qplot(1:1, 1:1, geom = "blank") +
                     xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf) + theme_blank
 
 txt_web <- qplot(1:9, 1:9, geom = "blank") +
-  annotate("text", x = 4.4, y = 3.6, label = "WEB", size = 9, colour = col_file) +
+  annotate("text", x = 4.3, y = 3.6, label = "WEB", size = 9, colour = col_file) +
   theme_blank
 
 txt_json <- qplot(1:9, 1:9, geom = "blank") +
@@ -101,8 +101,8 @@ img_rMaps4 <- qplot(1:1, 1:1, geom = "blank") +
   annotation_custom(img2grob("./image/img_rMaps4.png"), 
                     xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf) + theme_blank
 
-print(img_ramnath, vp = vplayout(set_pixel['p_sub1', 2:3], 1445:1566.67))
-print(img_rMaps5, vp = vplayout(set_pixel['p_sub1', 2:3], 1587.67:1709.33))
+print(img_rMaps5, vp = vplayout(set_pixel['p_sub1', 2:3], 1445:1566.67))
+print(img_ramnath, vp = vplayout(set_pixel['p_sub1', 2:3], 1587.67:1709.33))
 print(img_rMaps4, vp = vplayout(set_pixel['p_sub1', 2:3], 1730.33:1852))
 
 ## =============================================================================
@@ -130,11 +130,6 @@ print(img_leaflet, vp = vplayout(set_pixel['p_sub1', 2:3], 2198.33:2320))
 ## =============================================================================
 ## F
 ## =============================================================================
-
-
-txt_web <- qplot(1:9, 1:9, geom = "blank") +
-  annotate("text", x = 4.4, y = 3.6, label = "WEB", size = 9, colour = col_file) +
-  theme_blank
 
 txt_csv <- qplot(1:9, 1:9, geom = "blank") +
   annotate("text", x = 4.5, y = 3.6, label = "CSV", size = 9, colour = col_file) +

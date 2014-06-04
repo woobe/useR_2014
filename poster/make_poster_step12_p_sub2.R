@@ -92,8 +92,8 @@ img_nav <- qplot(1:1, 1:1, geom = "blank") +
   annotation_custom(img2grob("./image/img_nav.png"), 
                     xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf) + theme_blank
 
-print(img_nav, vp = vplayout(set_pixel['p_sub2', 2:3], 1445:1566.67))
-print(img_mouse, vp = vplayout(set_pixel['p_sub2', 2:3], 1587.67:1709.33))
+print(img_mouse, vp = vplayout(set_pixel['p_sub2', 2:3], 1445:1566.67))
+print(img_nav, vp = vplayout(set_pixel['p_sub2', 2:3], 1587.67:1709.33))
 print(img_rcmap_hand, vp = vplayout(set_pixel['p_sub2', 2:3], 1730.33:1852))
 
 
@@ -142,5 +142,4 @@ img_safari <- qplot(1:1, 1:1, geom = "blank") +
 print(img_chrome, vp = vplayout(set_pixel['p_sub2', 2:3], 2381:2502.67))
 print(img_firefox, vp = vplayout(set_pixel['p_sub2', 2:3], 2523.67:2645.33))
 print(img_safari, vp = vplayout(set_pixel['p_sub2', 2:3], 2666.33:2788))
-
 
