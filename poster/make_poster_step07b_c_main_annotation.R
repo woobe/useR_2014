@@ -66,23 +66,23 @@ print(shade, vp = vplayout(975:1025, 480:645))
 ## =============================================================================
 
 txt_soho <- qplot(1:100, 1:100, geom = "blank") +
-  annotate("text", x = 73, y = 82, label = "Soho District", size = 10, colour = col_text3) +
-  annotate("text", x = 73, y = 79, label = "all sorts of entertainment venues", size = 6, colour = col_text3) +
+  annotate("text", x = 73, y = 82, label = "Soho District", size = 9, colour = col_text3) +
+  annotate("text", x = 73, y = 79, label = "All Sorts of Entertainment Venues", size = 5, colour = col_text3) +
   theme_blank
 
 txt_police <- qplot(1:100, 1:100, geom = "blank") +
-  annotate("text", x = 20, y = 10, label = "Police HQ", size = 10, colour = col_text3) +
-  annotate("text", x = 20, y = 7, label = "crimes recorded at HQ", size = 6, colour = col_text3) +
+  annotate("text", x = 20, y = 10, label = "Police HQ", size = 9, colour = col_text3) +
+  annotate("text", x = 20, y = 7, label = "Crimes Recorded at HQ", size = 5, colour = col_text3) +
   theme_blank
 
 txt_bigben <- qplot(1:100, 1:100, geom = "blank") +
-  annotate("text", x = 51, y = 10, label = "Attractions", size = 10, colour = col_text3) +
-  annotate("text", x = 51, y = 7, label = "Big Ben, Westminster Abbey", size = 6, colour = col_text3) +
+  annotate("text", x = 51, y = 10, label = "Attractions", size = 9, colour = col_text3) +
+  annotate("text", x = 51, y = 7, label = "Big Ben, Westminster Abbey", size = 5, colour = col_text3) +
   theme_blank
 
 txt_waterloo <- qplot(1:100, 1:100, geom = "blank") +
-  annotate("text", x = 83, y = 10, label = "Waterloo", size = 10, colour = col_text3) +
-  annotate("text", x = 83, y = 7, label = "central railway terminus", size = 6, colour = col_text3) +
+  annotate("text", x = 83, y = 10, label = "Waterloo", size = 9, colour = col_text3) +
+  annotate("text", x = 83, y = 7, label = "Central Railway Terminus", size = 5, colour = col_text3) +
   theme_blank
 
 print(txt_soho, vp = vplayout(set_pixel["t_main", 2]:set_pixel["c_main", 3], 21:702))

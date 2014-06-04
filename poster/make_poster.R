@@ -28,11 +28,11 @@ library(extrafont) ## Note: Run font_import() if it has not been done yet
 
 set.seed(1234)
 new_colours <- extract_colours("http://filmhash.files.wordpress.com/2011/06/reservoir-dogs-051.jpg", 9)
-new_colours2 <- extract_colours("http://www.moviegoods.com/Assets/product_images/1010/477803.1010.A.jpg", 9)
+#new_colours2 <- extract_colours("http://www.moviegoods.com/Assets/product_images/1010/477803.1010.A.jpg", 9)
 
 if (FALSE) {
   simulate_colours(new_colours)
-  simulate_colours(new_colours2)
+  #simulate_colours(new_colours2)
 }
 
 ## Set Colours
@@ -43,9 +43,9 @@ col_text <- new_colours[1]
 col_text2 <- new_colours[2]
 col_text3 <- new_colours[9]
 
-col_shade <- new_colours[1]   # wes_colour[5]
-col_shade_cm <- new_colours[3]   # wes_colour[5]
-col_shade_rcm <- new_colours[7]  # wes_colour[4]
+col_shade <- new_colours[1] 
+col_shade_cm <- new_colours[3]   
+col_shade_rcm <- new_colours[7] 
 
 col_link_cm <- new_colours[2]
 col_link_rcm <- new_colours[2]
@@ -94,6 +94,7 @@ pushViewport(viewport(layout = grid.layout(2000, 2828)))
 vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
 
 
+
 ## =============================================================================
 ## Run each mini scripts
 ## =============================================================================
@@ -106,15 +107,15 @@ source('make_poster_step04_header.R')
 source('make_poster_step05_sub_header.R')
 
 source('make_poster_step06_t_main.R')
-source('make_poster_step07_c_main.R')             
-source('make_poster_step07b_c_main_annotation.R') 
+source('make_poster_step07_c_main.R')
+source('make_poster_step07b_c_main_annotation.R')
 
 source('make_poster_step08_t_sub1.R')
 source('make_poster_step09_p_sub1.R')
 source('make_poster_step10_c_sub1.R')
- 
+
 source('make_poster_step11_t_sub2.R')
-source('make_poster_step12_p_sub2.R')       
+source('make_poster_step12_p_sub2.R')
 source('make_poster_step13_c_sub2.R')
  
 source('make_poster_step14_footer.R')
