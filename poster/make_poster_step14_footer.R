@@ -27,24 +27,23 @@ print(txt_useR, vp = vplayout(set_pixel["footer",2:3], 181:1000))
 
 ## Text (Left)
 txt_tw <- qplot(1:9, 1:9, geom = "blank") +
-  annotate("text", x = 5.0, y = 5, label = "tweet to @matlabulous", size = 11, colour = col_text2) +
+  annotate("text", x = 5.0, y = 7, label = "tweet to @matlabulous", size = 11, colour = col_text2) +
+  annotate("text", x = 5.0, y = 3, label = "jofai.chow@gmail.com", size = 11, colour = col_text2) +
   theme_blank
 print(txt_tw, vp = vplayout(set_pixel["footer",2:3], 489:1404))
 
 ## Text (Right)
 txt_git <- qplot(1:9, 1:9, geom = "blank") +
-  annotate("text", x = 5.0, y = 5, label = "code: github.com/woobe", size = 11, colour = col_text2) +
+  annotate("text", x = 5.0, y = 7, label = "github.com/woobe", size = 11, colour = col_text2) +
+  annotate("text", x = 5.0, y = 3, label = "bl.ocks.org/woobe", size = 11, colour = col_text2) +
   theme_blank
 print(txt_git, vp = vplayout(set_pixel["footer",2:3], 1425:2340))
-
 
 ## Text (Middle)
 txt_web <- qplot(1:9, 1:9, geom = "blank") +
   annotate("text", x = 5.0, y = 5, label = "jofaichow.co.uk", size = 19, colour = col_text) +
   theme_blank
 print(txt_web, vp = vplayout(set_pixel["footer",2:3], 21:2808))
-
-
 
 ## Image Twitter
 img_twitter <- qplot(1:1, 1:1, geom = "blank") +

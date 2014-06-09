@@ -21,7 +21,6 @@ library(ggplot2)
 library(rPlotter)
 library(extrafont) ## Note: Run font_import() if it has not been done yet
 
-
 ## =============================================================================
 ## Global Settings
 ## =============================================================================
@@ -75,13 +74,10 @@ theme_blank <- create_ggtheme("blank")  ## use rPlotter package
 ## Load Extra Fonts
 suppressMessages(loadfonts())
 
-## Create blank pdf (Linux recommended)
-if (Sys.info()[1] == "Linux") {
-  pdf(file = "output.pdf", height = 33.1, width = 46.8, compress = TRUE,
-      family = "Ubuntu", title = "useR! 2014 Poster by Jo-fai Chow") 
-} else {
-  pdf(file = "output.pdf", height = 33.0709, width = 46.77165) ## use Window's default
-}
+## Create blank pdf (the pdf is genearted on Linux Mint 17 (Ubuntu 14.04 LTS) 
+## with Ubuntu Fonts - results will vary if different fonts are used
+pdf(file = "poster_useR_2014_A0_jofaichow.pdf", height = 33.1, width = 46.8, compress = TRUE,
+    family = "Ubuntu", title = "useR! 2014 Poster by Jo-fai Chow") 
 
 
 ## =============================================================================
@@ -92,7 +88,6 @@ if (Sys.info()[1] == "Linux") {
 grid.newpage()
 pushViewport(viewport(layout = grid.layout(2000, 2828)))
 vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
-
 
 ## =============================================================================
 ## Run each mini scripts
@@ -116,7 +111,7 @@ source('make_poster_step10_c_sub1.R')
 source('make_poster_step11_t_sub2.R')
 source('make_poster_step12_p_sub2.R')
 source('make_poster_step13_c_sub2.R')
- 
+
 source('make_poster_step14_footer.R')
 
 
@@ -133,5 +128,5 @@ dev.off()
 ## =============================================================================
 
 ## Embed fonts (very important!)
-if (Sys.info()[1] == "Linux") embed_fonts("output.pdf")
+if (Sys.info()[1] == "Linux") embed_fonts("poster_useR_2014_A0_jofaichow.pdf")
 

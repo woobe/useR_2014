@@ -42,10 +42,48 @@ ln_main_01d <- qplot(1:1000, 1:1000, geom = "blank") +
            arrow=arrow()) +
   theme_blank
 
+ln_main_01e <- qplot(1:1000, 1:1000, geom = "blank") +
+  annotate("segment", 
+           x = 290, xend = 625, 
+           y = 320, yend = 850, size = 2, 
+           colour = 'black', linetype = 'dotted',
+           arrow=arrow()) +
+  theme_blank
+
 print(ln_main_01a, vp = vplayout(set_pixel["c_main", 2:3], 21:702))
 print(ln_main_01b, vp = vplayout(set_pixel["c_main", 2:3], 21:702))
 print(ln_main_01c, vp = vplayout(set_pixel["c_main", 2:3], 21:702))
 print(ln_main_01d, vp = vplayout(set_pixel["c_main", 2:3], 21:702))
+
+
+## =============================================================================
+## Rectangles
+## =============================================================================
+
+rect_01 <- qplot(1:1000, 1:1000, geom = "blank") +
+  geom_rect(xmin = -Inf, xmax = Inf,
+            ymin = -Inf, ymax = Inf,
+            colour = col_text2,
+            fill = 'transparent',
+            #linetype = 'dotted',
+            #alpha = 0.25,
+            size = 2) +
+  theme_blank
+
+print(rect_01, vp = vplayout(741:970, 1746:1975))
+print(rect_01, vp = vplayout(500:676, 2194:2371))
+
+ln_rect <- qplot(1:1000, 1:1000, geom = "blank") +
+  annotate("segment", 
+           x = 400, xend = 550, 
+           y = 575, yend = 850, size = 2, 
+           colour = col_text2,
+           #linetype = 'dotted',
+           arrow=arrow()) +
+  theme_blank
+
+print(ln_rect, vp = vplayout(set_pixel["c_main", 2:3], 1425:2808))
+
 
 
 ## =============================================================================

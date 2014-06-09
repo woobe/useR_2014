@@ -6,7 +6,7 @@
 
 txt_t_main_cm1 <- qplot(1:9, 1:9, geom = "blank") +
   annotate("text", x = 5, y = 6, label = "Crime Hot Spots in Central London", size = 15, colour = col_text) +
-  annotate("text", x = 5, y = 2, label = "January 2014 - 2,933 Records", size = 12, colour = col_text2) +
+  annotate("text", x = 5, y = 2, label = "January 2014 - 2,913 Records", size = 12, colour = col_text2) +
   theme_blank
 
 txt_t_main_cm2 <- qplot(1:9, 1:9, geom = "blank") +
