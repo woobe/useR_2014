@@ -38,8 +38,36 @@ Home Office (2014).
 - Open Data about Crime and Policing in England, Wales and Northern Ireland, http://data.police.uk.
 - Vaidyanathan, R. (2014). Package **rMaps** on GitHub, https://github.com/ramnathv/rMaps.
 
-## Poster
+## Poster (Snapshot)
 
-I am working on it ...
+<center>
+<img src="http://i.imgur.com/EEfW8rM.jpg" alt="poster">
+</center>
 
-**Requirement**: abstracts accepted for posters will take place during one of two evening poster sessions. Poster sessions are a social event. There are no parallel talks or events happening, so everyone can talk and stop by posters they are interested in. The dimensions of each poster should not exceed 4' x 4' or 120cm x 120cm.
+
+## System and Session Info
+
+```
+> Sys.info()
+                                     sysname                                      release                                      version 
+                                     "Linux"                          "3.13.0-24-generic" "#47-Ubuntu SMP Fri May 2 23:30:00 UTC 2014" 
+                                    nodename                                      machine                                        login 
+                                "woobe-mint"                                     "x86_64"                                    "unknown" 
+                                        user                               effective_user 
+                                     "woobe"                                      "woobe" 
+```
+```
+> sessionInfo()
+R version 3.0.2 (2013-09-25)
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+locale:
+ [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C               LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8     LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8    LC_PAPER=en_GB.UTF-8      
+ [8] LC_NAME=C                  LC_ADDRESS=C               LC_TELEPHONE=C             LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] tools_3.0.2
+```
